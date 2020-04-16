@@ -9,7 +9,7 @@ export const SUCCESS = 'SUCCESS'
 export const ERROR = 'ERROR'
 export const LOADING = 'LOADING'
 
-const searchUsers = (state = SUCCESS, action) => {
+const searchUsers = (state = '', action) => {
   switch (action.type) {
     case SEARCH_USERS:
       return LOADING

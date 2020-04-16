@@ -1,5 +1,6 @@
 import React from 'react'
 import UserSearch from './components/userSearch'
+import Results from './components/results'
 import { css } from 'emotion'
 
 const styles = css`
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className={styles}>
       <UserSearch />
+      <Results />
     </div>
   )
 }
