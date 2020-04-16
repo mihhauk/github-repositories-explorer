@@ -16,7 +16,6 @@ function User({ login }) {
   const { status, repos, getUserRepos } = useUserRepos(login)
 
   const toggleUserDetails = () => {
-    console.log(status)
     !isOpen && status !== SUCCESS && getUserRepos()
     setIsOpen(!isOpen)
   }
