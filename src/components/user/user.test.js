@@ -2,10 +2,10 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import User from '.'
-import { useUserRepos } from './hooks'
+import { useUserRepos } from './data'
 import { SUCCESS } from '../../reducers/status'
 
-jest.mock('./hooks', () => ({
+jest.mock('./data', () => ({
   useUserRepos: jest.fn(),
 }))
 

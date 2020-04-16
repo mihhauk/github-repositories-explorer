@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import * as styles from './styles'
-import { useSearchUsers } from './hooks'
+import { useSearchUsers } from './data'
 import { LOADING } from '../../reducers/status'
 
 function UserSearch() {

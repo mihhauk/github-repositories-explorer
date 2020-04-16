@@ -2,10 +2,10 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import UserSearch from '.'
-import { useSearchUsers } from './hooks'
+import { useSearchUsers } from './data'
 
-jest.mock('./hooks', () => ({
-  useSearchUsers: jest.fn(),
+jest.mock('./data', () => ({
+  useSearchUsers: jest.fn(() => ({ searchUsers: jest.fn(), status: '' })),
 }))
 
 describe('user search', () => {
@@ -24,7 +24,7 @@ describe('user search', () => {
   test('search users works', () => {
     const mockSearchUsers = jest.fn()
     const query = 'testUser'
-    useSearchUsers.mockReturnValue(mockSearchUsers)
+    useSearchUsers.mockReturnValue({ searchUsers: mockSearchUsers, status: '' })
 
     const { getByText, getByPlaceholderText } = render(<UserSearch />)
     userEvent.type(getByPlaceholderText(/Enter username/i), query)

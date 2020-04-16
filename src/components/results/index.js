@@ -1,5 +1,5 @@
 import React from 'react'
-import { useUsers } from './hooks'
+import { useUsers } from './data'
 import { ERROR, LOADING, SUCCESS } from '../../reducers/status'
 import BarLoader from 'react-spinners/BarLoader'
 import * as styles from './styles'
@@ -24,7 +24,9 @@ function Results() {
         </ul>
       )}
       {status === SUCCESS && !users.length && (
-        <p className={styles.info}>Sorry, there are no users matching this search.</p>
+        <p className={styles.info}>
+          Sorry, there are no users matching this search.
+        </p>
       )}
     </div>
   )

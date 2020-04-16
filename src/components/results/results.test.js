@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from '@testing-library/react'
 import Results from '.'
-import { useUsers } from './hooks'
+import { useUsers } from './data'
 import { SUCCESS, ERROR } from '../../reducers/status'
 
-jest.mock('./hooks', () => ({
+jest.mock('./data', () => ({
   useUsers: jest.fn(),
 }))
 

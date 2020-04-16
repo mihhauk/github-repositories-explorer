@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import * as styles from './styles'
 import { FaChevronDown, FaChevronUp } from 'react-icons/fa'
-import { useUserRepos } from './hooks'
+import { useUserRepos } from './data'
 import { SUCCESS, LOADING } from '../../reducers/status'
 import Repositories from './repositories'
 import BeatLoader from 'react-spinners/BeatLoader'
