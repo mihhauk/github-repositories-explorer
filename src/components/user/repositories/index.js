@@ -16,13 +16,13 @@ function Repositories({ status, repos }) {
         {repos.map(({ id, name, description, stargazers_count }) => (
           <li key={id} className={styles.listItem}>
             <div className={styles.heading}>
-              <span>{name}</span>
-              <span>
+              <span className={styles.name}>{name}</span>
+              <span className={styles.stars}>
                 {stargazers_count}
                 <FaStar />
               </span>
             </div>
-            <span>{description}</span>
+            <p>{description}</p>
           </li>
         ))}
       </ul>
