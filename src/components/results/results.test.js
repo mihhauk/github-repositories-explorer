@@ -8,6 +8,10 @@ jest.mock('./hooks', () => ({
   useUsers: jest.fn(),
 }))
 
+jest.mock('../user', () => ({ login, ...props }) => (
+  <span {...props}>{login}</span>
+))
+
 describe('user search results', () => {
   test('display found users', () => {
     useUsers.mockReturnValue({

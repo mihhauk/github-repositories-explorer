@@ -24,7 +24,7 @@ function Results() {
         </ul>
       )}
       {status === SUCCESS && !users.length && (
-        <p className={styles.noResults}>Sorry, there are no users matching this search.</p>
+        <p className={styles.info}>Sorry, there are no users matching this search.</p>
       )}
     </div>
   )
