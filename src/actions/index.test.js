@@ -17,7 +17,10 @@ const mockStore = configureStore([thunk])
 describe('user search action', () => {
   test('successful search', async () => {
     const query = 'username'
-    const users = ['user1']
+    const users = [
+      { id: 1, login: 'user1', repos_url: 'url1' },
+      { id: 2, login: 'user2', repos_url: 'url2' },
+    ]
     api.getUsers.mockResolvedValueOnce({ data: { items: users } })
 
     const store = mockStore({})

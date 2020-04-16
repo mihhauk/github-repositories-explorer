@@ -1,9 +1,8 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import userEvent from '@testing-library/user-event'
 import Results from '.'
 import { useUsers } from './hooks'
-import { SUCCESS, LOADING, ERROR } from '../../reducers/status'
+import { SUCCESS, ERROR } from '../../reducers/status'
 
 jest.mock('./hooks', () => ({
   useUsers: jest.fn(),

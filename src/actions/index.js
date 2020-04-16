@@ -14,5 +14,11 @@ export const searchUsers = (query) => async (dispatch) => {
     dispatch({ type: SEARCH_USERS_ERROR })
     return
   }
-  dispatch({ type: SEARCH_USERS_SUCCESS, users: response.data.items })
+
+  const users = response.data.items.map(user => {
+    const { id, login, repos_url } = user
+    return {id, login, repos_url }
+  })
+
+  dispatch({ type: SEARCH_USERS_SUCCESS, users  })
 }
