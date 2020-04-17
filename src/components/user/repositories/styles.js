@@ -13,7 +13,6 @@ export const listItem = css`
 
 export const heading = css`
   font-size: 1.2rem;
-
   display: flex;
   justify-content: space-between;
   align-items: center;

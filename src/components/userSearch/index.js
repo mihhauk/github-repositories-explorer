@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import * as styles from './styles'
 import { useSearchUsers } from './data'
 import { LOADING, SUCCESS } from '../../reducers/status'
+import{ motion} from 'framer-motion'
 
 function UserSearch() {
   const [query, setQuery] = useState('')
@@ -27,9 +28,14 @@ function UserSearch() {
           value={query}
           onChange={updateQuery}
         ></input>
-        <button type='submit' className={styles.button}>
+        <motion.button
+          type='submit'
+          className={styles.button}
+          whileHover={{ scale: 1.02 }}
+          whileTap={{ scale: 0.98 }}
+        >
           Search
-        </button>
+        </motion.button>
       </form>
       {status === SUCCESS && (
         <span className={styles.resultsFor}>

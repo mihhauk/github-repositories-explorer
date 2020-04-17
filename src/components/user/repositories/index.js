@@ -2,6 +2,22 @@ import React from 'react'
 import * as styles from './styles'
 import { SUCCESS, ERROR } from '../../../reducers/status'
 import { FaStar } from 'react-icons/fa'
+import {motion, AnimatePresence} from 'framer-motion'
+
+function SlideAnimation ({isVisible, children}) {
+  return <AnimatePresence>
+    {isVisible && (
+      <motion.div
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5 }}
+        initial={{ opacity: 0 }}
+        exit={{ opacity: 0 }}
+      >
+        {children}
+      </motion.div>
+    )}
+  </AnimatePresence>
+}
 
 function Repositories({ status, repos }) {
   if (status === ERROR) {
@@ -30,4 +46,6 @@ function Repositories({ status, repos }) {
   )
 }
 
-export default Repositories
+export default ({ isVisible, ...props }) => <SlideAnimation isVisible={isVisible}>
+<Repositories {...props}/>
+</SlideAnimation>

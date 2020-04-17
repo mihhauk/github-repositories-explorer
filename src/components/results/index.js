@@ -4,6 +4,7 @@ import { ERROR, LOADING, SUCCESS } from '../../reducers/status'
 import BarLoader from 'react-spinners/BarLoader'
 import * as styles from './styles'
 import User from '../user'
+import {motion} from 'framer-motion'
 
 function Results() {
   const { status, users } = useUsers()
@@ -17,9 +18,9 @@ function Results() {
       {status !== ERROR && !!users.length && (
         <ul className={styles.resultList}>
           {users.map((user) => (
-            <li key={user.id}>
+            <motion.li animate={{ opacity: 1 }} initial={{ opacity: 0 }} key={user.id}>
               <User {...user} />
-            </li>
+            </motion.li>
           ))}
         </ul>
       )}

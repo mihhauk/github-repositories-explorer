@@ -8,3 +8,9 @@ export const title = css`
   padding: 10px;
   margin-bottom: 5px;
 `
+
+
+export const heading = css`
+  /* z-index: 1000; */
+`
+

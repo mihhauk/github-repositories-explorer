@@ -7,7 +7,7 @@ import Repositories from './repositories'
 import BeatLoader from 'react-spinners/BeatLoader'
 
 function Chevron({ isOpen, loading }) {
-  if (loading) return <BeatLoader size={5}/>
+  if (loading) return <BeatLoader size={5} />
   return isOpen ? <FaChevronUp /> : <FaChevronDown />
 }
 
@@ -21,7 +21,7 @@ function User({ login }) {
   }
 
   return (
-    <div>
+    <div className={styles.heading}>
       <div
         tabIndex='0'
         className={styles.title}
@@ -32,9 +32,11 @@ function User({ login }) {
         <span>{login}</span>
         <Chevron isOpen={isOpen} loading={status === LOADING} />
       </div>
-      {isOpen && status !== LOADING && (
-        <Repositories status={status} repos={repos} />
-      )}
+      <Repositories
+        isVisible={isOpen && status !== LOADING}
+        status={status}
+        repos={repos}
+      />
     </div>
   )
 }
