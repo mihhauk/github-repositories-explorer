@@ -19,3 +19,9 @@ export const button = css`
   background: #018bd1;
   color: white;
 `
+
+export const resultsFor = css`
+  text-align: center;
+  color: #7f93a3;
+  padding-top: 5px;
+`
